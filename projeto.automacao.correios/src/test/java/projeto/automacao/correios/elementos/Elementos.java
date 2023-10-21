@@ -10,6 +10,7 @@ public class Elementos {
 	public static By localidadeUF = By.xpath("//td[@data-th='Localidade/UF']");
 	public static By cep = By.xpath("//td[@data-th='CEP']");
 	public static By msgAlerta = By.xpath("//*[@id='mensagem-resultado-alerta']/h6");
+	public static By tituloTelaBuscaCep = By.xpath("//div[@id='titulo_tela']");
 
 	
 	

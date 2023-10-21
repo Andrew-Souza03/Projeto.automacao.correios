@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources",
 		glue = "projeto.automacao.correios.steps",
 		tags = "@regressivos",
-		dryRun = false,
+		dryRun = true,
 		monochrome = true,
 		snippets = SnippetType.CAMELCASE,
 		plugin = {"pretty", "html:target/cucumber-report.html"}

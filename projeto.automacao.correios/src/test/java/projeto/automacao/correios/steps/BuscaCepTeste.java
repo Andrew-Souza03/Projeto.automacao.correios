@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import projeto.automacao.correios.config.InicializarTeste;
+import projeto.automacao.correios.pages.BuscaCepPage;
 import projeto.automacao.correios.pages.HomePage;
 import projeto.automacao.correios.pages.ResultadoPage;
 
@@ -13,6 +14,7 @@ public class BuscaCepTeste {
 
 	HomePage home = new HomePage();
 	ResultadoPage resultado = new ResultadoPage();
+	BuscaCepPage buscaPage = new BuscaCepPage();
 	
 	@Before
 	public void iniciarTeste() {
@@ -57,10 +59,37 @@ public class BuscaCepTeste {
 	public void enviarOsDadosComInformacoesInvalidas() {
 	    home.buscarCepEndereco("876653-765");
 	}
-	@Then("valido mensagem de dados inexistentes")
-	public void validoMensagemDeDadosInexistentes() {
-	    resultado.validarMsg("Dados não encontrado");
+	
+	
+	@Then("validar mensagem de dados inexistentes")
+	public void validarMensagemDeDadosInexistentes() {
+		resultado.validarMsg("Dados não encontrado");
 	}
+
+	
+	@Given("enviar apenas espaço no campo de busca")
+	public void enviarApenasEspaçoNoCampoDeBusca() {
+		home.buscarCepEndereco(" ");
+	}
+	
+
+	@Then("validar mensagem de dados nao informados")
+	public void validarMensagemDeDadosNaoInformados() {
+	    resultado.validarMsg("DADOS NAO INFORMADO");
+	}
+
+	
+	@Given("enviar campo vazio")
+	public void enviarCampoVazio() {
+		home.buscarCepEndereco("");
+	}
+	
+	@Then("validar nova pagina de busca")
+	public void validarNovaPaginaDeBusca() {
+	    buscaPage.validarTituloTela("Busca CEP");
+	}
+
+
 
 
 

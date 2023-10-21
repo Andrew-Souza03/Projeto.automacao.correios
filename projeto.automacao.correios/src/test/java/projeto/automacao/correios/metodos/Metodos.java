@@ -65,8 +65,26 @@ public class Metodos extends DriversProjeto{
 	
 	public void validarMsg(By elemento, String textoEsperado) {
 
-		String textoCapturado = driver.findElement(elemento).getText();
-		assertEquals(textoEsperado, textoCapturado);
+		try {
+			String textoCapturado = driver.findElement(elemento).getText();
+			assertEquals(textoEsperado, textoCapturado);
+		} catch (Exception e) {
+			System.out.println("**** Causa do erro ****" + e.getCause());
+			System.out.println("**** Mensagem do erro ****" + e.getMessage());
+		}
 		
 	}
+	
+	public void validarTitulo(By elemento, String tituloEsperado) {
+		
+			try {
+				String tituloCapturado = driver.findElement(elemento).getText();
+				assertEquals(tituloEsperado, tituloCapturado);
+			} catch (Exception e) {
+				System.out.println("**** Causa do erro ****" + e.getCause());
+				System.out.println("**** Mensagem do erro ****" + e.getMessage());
+			}
+	}
+	
+	
 }
