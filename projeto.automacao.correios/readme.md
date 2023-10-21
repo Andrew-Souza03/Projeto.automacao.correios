@@ -31,7 +31,7 @@ Siga os passos abaixo para instalar e executar os testes:
 1. Clone o repositório para o seu ambiente local.
 2. Navegue até a raiz do projeto e execute o comando: mvn test -Dtest=Executa
 
-# Relatório de Testes
+## Relatório de Testes
 
 Após a execução dos testes de automação, você pode acessar o relatório gerado com informações sobre testes bem-sucedidos, falhas e estatísticas de execução.
 Para acessar o relatório navegue até a pasta target na raiz do projeto local no seu computador.
